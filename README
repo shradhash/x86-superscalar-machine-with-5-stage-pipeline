@@ -1,0 +1,33 @@
+1. 
+   Following tools Should be install in your system:
+     - verilator
+     - gtkwave
+     - ccache
+
+   installing these softwares are easy.
+
+   To use these tools, you need to set the environment variables - LD_LIBRARY_PATH and PATH if needed.(If you have changed the installation path)
+
+
+   For bash, 
+     export LD_LIBRARY_PATH=...
+
+
+   For bash,
+     export PATH=...
+
+2. Building/Running the code
+   a) Following are the commands to build and run the code
+   make		// build code
+   make run	// run code (it will create trace.vcd)
+
+   The result of running the code will be a 'trace.vcd' waveform file. You can view it using gtkwave (see instructions below).
+
+   b) To change the program binary which you are decoding
+   - Edit the following line in Makefile
+     RUNELF=$(PWD)/prog2
+
+3. Viewing the trace.vcd waveform
+   You can view waveforms using the following command:
+     gtkwave trace.vcd
+     (If you want to run gtkwave in a server somewhere you should use ssh -X).
